@@ -1,0 +1,16 @@
+Tenemos una pasteleria.
+	los pasteleros (Producen tartas)
+	los comilones (Comen tartas)
+	
+	Tenemos una cinta que va girando y depositando las tartas
+	
+		Pastelero deposita tartas y los comilones retiran tartas. 
+		las tartas se producen con un ID unico para cada tarta y ademas tienen un peso entre 500 y 1000 gramos
+		El tiempo de proceso de una tarta sea en ms y sea igual al peso en gramos.
+		El tiempo de consumo tambien es en ms igual que el peso.
+		La cinta tiene tamaño ilimitado(COLA).
+		El numero de pasteleros es de 3 NUM_PASTELEROS idPastelero, Producidas, tiempoProduccionTotal
+		El numero de comilones es de 2 NUM_COMILONES idComilon, Consumidas,tiempoConsumoTotal
+		Pasteleria 1 Cinta  y tiene TARTAS_A_PRODUCIR 20 (Entre todos los productores tienen que hacer 20) y los comilones
+		dejan de comer cuando han comido 20
+		La aplicacion termina cuando las tartas comidas son iguales a las tartas creadas.
