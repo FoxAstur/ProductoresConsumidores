@@ -7,15 +7,19 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import pasteleria.Pasteleria;
 
 /**
  *
  * @author Carlos
  */
 public class Comilon extends Thread {
-    
-    
-    List <Comilon> comilones = new ArrayList<>();
+
+    public ArrayBlockingQueue<Tarta> cintaPasteles;
+    List<Comilon> comilones = new ArrayList<>();
     private int idComilon;
     private int tartasComidas;
     private int tiempoTartaComida;
@@ -38,12 +42,12 @@ public class Comilon extends Thread {
     }
 
     public void añadeComilon(Comilon c) {
-       comilones.add(c);
+        comilones.add(c);
     }
-    
-    public void borraComilon (Comilon c){
+
+    public void borraComilon(Comilon c) {
         comilones.remove(c);
-        
+
     }
 
     public int getIdComilon() {
@@ -69,6 +73,44 @@ public class Comilon extends Thread {
     public void setTiempoTartaComida(int tiempoTartaComida) {
         this.tiempoTartaComida = tiempoTartaComida;
     }
-    
-    
+
+    public void comeTarta() {
+        
+        
+        Tarta t = new Tarta();
+        Pasteleria p = new Pasteleria();
+        Comilon c = new Comilon();
+        c.setIdComilon(idComilon++);
+        c.setTartasComidas(c.getTartasComidas());
+        c.setTiempoTartaComida(c.getTartasComidas());
+        comilones.add(c);
+  
+
+        cintaPasteles = p.getCinta();
+
+        if (cintaPasteles.peek() == null) {
+            try {
+                sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Pasteleria.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        cintaPasteles.remove();
+        System.out.println("Se ha comido una tarta");
+        try {
+            sleep(t.getTiempoDeConsumo());
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Comilon.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void run() {
+
+        
+        Comilon c = new Comilon();
+        c.comeTarta();
+        
+    }
+
 }

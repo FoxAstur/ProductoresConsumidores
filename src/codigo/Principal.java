@@ -5,6 +5,8 @@
  */
 package codigo;
 
+import pasteleria.Pasteleria;
+
 /**
  *
  * @author Carlos
@@ -14,6 +16,11 @@ public class Principal {
     
     
     public static void main(String[] args) {
+        
+        Pasteleria p = new Pasteleria();
+        
+        p.abierta();
+        
         
     }
     

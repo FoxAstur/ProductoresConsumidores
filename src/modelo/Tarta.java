@@ -1,8 +1,7 @@
-
 package modelo;
 
 public class Tarta {
-    
+
     private int tiempoDeProduccion;
     private int tiempoDeConsumo;
     private int peso;
@@ -13,6 +12,9 @@ public class Tarta {
         this.tiempoDeConsumo = tiempoDeConsumo;
         this.peso = peso;
         this.idTarta = idTarta;
+    }
+
+    public Tarta() {
     }
 
     public void setTiempoDeProduccion(int tiempoDeProduccion) {
@@ -30,6 +32,21 @@ public class Tarta {
     public void setIdTarta(int idTarta) {
         this.idTarta = idTarta;
     }
-    
-}
 
+    public int getTiempoDeProduccion() {
+        return tiempoDeProduccion;
+    }
+
+    public int getTiempoDeConsumo() {
+        return tiempoDeConsumo;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public int getIdTarta() {
+        return idTarta;
+    }
+
+}
